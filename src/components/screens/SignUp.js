@@ -4,53 +4,62 @@ import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../context/store";
 import { quizConfig } from "../../axiosConfig";
 import { Helmet } from "react-helmet";
+// import { UserContext } from "../../App";
 
-export default function LogIn() {
+export default function SignUp() {
     const { state, dispatch } = useContext(Context);
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
-    // console.log(state,"rrr");
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setMessage("");
         quizConfig
-            .post(`/auth/token/`, {
-                username: username,
-                password: password,
+            .post(`/auth/create/`, {
+                email,
+                password,
+                name: name,
             })
             .then((response) => {
-                let data = response.data;
-                // console.log(data.access,"555");
-                const user_details = {
-                    is_verified: true,
-                    access_token: data.access,
-                };
-                dispatch({
-                    type: "UPDATE_USER_DETAILS",
-                    user_details,
-                });
-                navigate("/category");
+                let data = response.data.data;
+                console.log(response.data);
+
+                let status_code = response.data.status_code;
+                if (status_code === 6000) {
+                    // console.log(data.access,"555");
+
+                    const user_details = {
+                        is_verified: true,
+                        access_token: data.access,
+                    };
+                    dispatch({
+                        type: "UPDATE_USER_DETAILS",
+                        user_details,
+                    });
+                    navigate("/category");
+                } else {
+                    setMessage(response.data.data);
+                }
             })
             .catch((error) => {
-                console.log(error.response.data);
+                // console.log("error", error.response);
+                if (error.response.status === 500) {
+                    setMessage("Name,Email and Password:Field is required");
+                }
                 if (error.response.status === 401) {
                     setMessage(error.response.data.detail);
-                } else {
-                    if (error.response.data.username === "username") {
-                        setMessage("email:field is required");
-                    } else {
-                        setMessage("email & password field is required");
-                    }
                 }
             });
     };
     return (
         <>
             <Helmet>
-                <title>Log In | Quiz App</title>
+                <title>Sign Up | Quiz App</title>
             </Helmet>
+
             <Container>
                 <LeftContainer>
                     <HeaderContainer>
@@ -65,15 +74,23 @@ export default function LogIn() {
                 </LeftContainer>
                 <RightContainer>
                     <LoginContainer>
-                        <LoginHeading>Login to your Account</LoginHeading>
-                        <LoginInfo>Enter email and password to login</LoginInfo>
+                        <LoginHeading>Register into Account</LoginHeading>
+                        <LoginInfo>
+                            Create an account to access online quiz
+                        </LoginInfo>
                         <Form onSubmit={handleSubmit}>
                             <InputContainer>
                                 <TextInput
-                                    onChange={(e) =>
-                                        setUsername(e.target.value)
-                                    }
-                                    value={username}
+                                    onChange={(e) => setName(e.target.value)}
+                                    value={name}
+                                    type="text"
+                                    placeholder="Name"
+                                />
+                            </InputContainer>
+                            <InputContainer>
+                                <TextInput
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email}
                                     type="email"
                                     placeholder="Email"
                                 />
@@ -88,10 +105,10 @@ export default function LogIn() {
                                     placeholder="Password"
                                 />
                             </InputContainer>
-                            <LoginButton to="/signup">Signup Now</LoginButton>
+                            <LoginButton to="/login">Login Now</LoginButton>
                             {message && <ErrorMessage>{message}</ErrorMessage>}
                             <ButtonContainer>
-                                <SubmitButton>Login</SubmitButton>
+                                <SubmitButton>Create an Account</SubmitButton>
                             </ButtonContainer>
                         </Form>
                     </LoginContainer>
@@ -152,8 +169,6 @@ const Form = styled.form`
 const InputContainer = styled.div`
     margin-bottom: 15px;
     position: relative;
-    &:before {
-    }
 `;
 const TextInput = styled.input`
     padding: 20px 25px 20px 30px;
@@ -180,11 +195,6 @@ const SubmitButton = styled.button`
     border-radius: 8px;
     font-size: 20px;
     cursor: pointer;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-        opacity: 0.8;
-    }
 `;
 const ButtonContainer = styled.div`
     display: flex;

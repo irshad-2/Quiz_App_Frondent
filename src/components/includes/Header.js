@@ -17,7 +17,7 @@ function Header() {
       <HeaderContainer>
         <Link to="/">
           <DivLeft>
-            <LogoImg src={require("../../assets/images/logo.png")} />
+            <LogoImg src={require("../../assests/images/logo.png")} />
           </DivLeft>
         </Link>
         {userDetails.is_verified ? (
