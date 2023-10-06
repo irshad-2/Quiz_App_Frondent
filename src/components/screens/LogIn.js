@@ -56,7 +56,7 @@ export default function LogIn() {
                     <HeaderContainer>
                         <Link to={"/home"}>
                             <Logo
-                                src={require("../../assets/images/logo.png")}
+                                src={require("../../assets/images/bg3.png")}
                                 alt="Image"
                             />
                         </Link>
@@ -115,15 +115,16 @@ const HeaderContainer = styled.div`
 `;
 const Logo = styled.img`
     width: 100%;
+    border-radius: 50%;
 `;
 const MainHeading = styled.h1`
     font-size: 80px;
-    color: #090e5e;
+    color: #fff;
     margin-top: 200px;
     line-height: 1.4em;
 `;
 const RightContainer = styled.div`
-    background: #efefef;
+    background: #c6f0fe;
     width: 45%;
     display: flex;
     align-items: flex-end;

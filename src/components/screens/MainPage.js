@@ -204,12 +204,14 @@ const MainContainer = styled.div`
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
+    color: #fff;
 `;
 const QuestionContainer = styled.div`
     width: 45%;
     border: 1px solid black;
     padding: 10px;
     border-radius: 5px;
+    
 `;
 const TopScorer = styled.div`
     width: 45%;
@@ -226,17 +228,22 @@ const ScoreHeading = styled.h1`
 const QuestionHeading = styled.h1`
     font-size: 20px;
     text-align: center;
+    
 `;
 const QuizContainer = styled.div`
     display: flex;
 `;
-const QuizNumber = styled.h3``;
+const QuizNumber = styled.h3`
+/* color: #fff; */
+
+`;
 const Questions = styled.h3``;
 const OptionsContainer = styled.div`
     padding: 10px 50px;
     margin-top: 20px;
+    
 `;
-const ScoreSubHeading = styled.h2``;
+const ScoreSubHeading = styled.h2`color: #fff;`;
 const SubmitBtn = styled.div`
     display: inline-block;
     background: #046bf6;

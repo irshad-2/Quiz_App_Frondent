@@ -18,7 +18,7 @@ function Header() {
                 <Link to="/">
                     <DivLeft>
                         <LogoImg
-                            src={require("../../assets/images/logo.png")}
+                            src={require("../../assets/images/bg3.png")}
                         />
                     </DivLeft>
                 </Link>
@@ -60,7 +60,7 @@ const LogoImg = styled.img`
     display: block;
 `;
 const Button = styled.div`
-    background: #046bf6;
+    background: #fff;
     padding: 10px 40px;
     border-radius: 5px;
     transition: opacity 0.3s ease;
