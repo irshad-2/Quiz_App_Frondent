@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { quizConfig } from "../../axiosConfig";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import axios from 'axios';
 // import { Context } from "../context/store";
 
 function MainPage() {
