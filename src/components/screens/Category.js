@@ -32,16 +32,16 @@ function Category() {
             <h1>Please Select The Question Level </h1>
             <RadioGroup>
               <RadioButton
-                onClick={() => handleOptionChange("Technology")}
-                selected={selectedOption === "Technology"}
-              >
-                Medium
-              </RadioButton>
-              <RadioButton
-                onClick={() => handleOptionChange("General Knowledge")}
-                selected={selectedOption === "General Knowledge"}
+                onClick={() => handleOptionChange("Hard")}
+                selected={selectedOption === "Hard"}
               >
                 Hard
+              </RadioButton>
+              <RadioButton
+                onClick={() => handleOptionChange("Medium")}
+                selected={selectedOption === "Medium"}
+              >
+                Medium
               </RadioButton>
             </RadioGroup>
             <SubmitBtnContainer>
