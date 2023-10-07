@@ -67,7 +67,7 @@ export default function SignUp() {
               <Logo src={require("../../assets/images/bg3.png")} alt="Image" />
             </Link>
           </HeaderContainer>
-          <MainHeading>Please Log In or Sign Up to Begin</MainHeading>
+          <MainHeading>Enter your work email adress to get started !! </MainHeading>
         </LeftContainer>
         <RightContainer>
           <LoginContainer>
@@ -128,10 +128,10 @@ const Logo = styled.img`
   border-radius: 50%;
 `;
 const MainHeading = styled.h1`
-  font-size: 80px;
-  color: #fff;
-  margin-top: 200px;
-  line-height: 1.4em;
+    font-size: 31px;
+    color: rgb(50, 10, 223);
+    margin-top: 94px;
+    line-height: 8.4em;
 `;
 const RightContainer = styled.div`
   background: #0188f1;

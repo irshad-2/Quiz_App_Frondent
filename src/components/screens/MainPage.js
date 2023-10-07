@@ -243,7 +243,8 @@ const OptionsContainer = styled.div`
     margin-top: 20px;
     
 `;
-const ScoreSubHeading = styled.h2`color: #fff;`;
+const ScoreSubHeading = styled.h2`color: #0D47A1;
+;`;
 const SubmitBtn = styled.div`
     display: inline-block;
     background: #046bf6;

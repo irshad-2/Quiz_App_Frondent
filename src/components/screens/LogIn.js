@@ -61,7 +61,7 @@ export default function LogIn() {
                             />
                         </Link>
                     </HeaderContainer>
-                    <MainHeading>Please Log In or Sign Up to Begin</MainHeading>
+                    <MainHeading>We are delighted that you have decided to join us Log In or Sign Up to Begin !!</MainHeading>
                 </LeftContainer>
                 <RightContainer>
                     <LoginContainer>
@@ -107,7 +107,7 @@ const Container = styled.div`
     padding: 15px;
 `;
 const LeftContainer = styled.div`
-    width: 55%;
+    width: 42%;
     padding: 40px 70px 70px;
 `;
 const HeaderContainer = styled.div`
@@ -118,10 +118,11 @@ const Logo = styled.img`
     border-radius: 50%;
 `;
 const MainHeading = styled.h1`
-    font-size: 80px;
-    color: #fff;
-    margin-top: 200px;
-    line-height: 1.4em;
+   font-size: 20px;
+    color: rgb(13, 71, 161);
+    margin-top: 135px;
+    line-height: 5.4em;
+    font-weight: 900;
 `;
 const RightContainer = styled.div`
     background: #c6f0fe;
