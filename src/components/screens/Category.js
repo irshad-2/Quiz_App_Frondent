@@ -108,6 +108,7 @@ const RadioButton = styled.div`
   &:hover {
     opacity: 0.7;
     color: blue;
+    background: yellow;
   }
 `;
 

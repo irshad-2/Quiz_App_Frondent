@@ -208,17 +208,20 @@ const MainContainer = styled.div`
 `;
 const QuestionContainer = styled.div`
     width: 45%;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 5px;
+    border: 0px solid black;
+    padding: 30px;
+    border-radius: 38px;
+    background: white;
     
 `;
 const TopScorer = styled.div`
-    width: 45%;
-    border: 1px solid black;
-    padding: 10px 70px;
-    height: 190px;
-    border-radius: 5px;
+    width: 40%;
+    border: 0px solid black;
+    padding: 17px 70px;
+    height: 189px;
+    border-radius: 22px;
+    background: ghostwhite;
+    margin: 75px;
 `;
 const ScoreHeading = styled.h1`
     font-size: 20px;
